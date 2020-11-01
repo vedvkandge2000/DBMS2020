@@ -1,0 +1,112 @@
+<main class="container mb-5">
+    <div class="row mb-3">
+
+        <div class="col-md-12 text-center mt-5">
+            <h1>Manage Page</h1>
+            <hr class="mt-3">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Manage User</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="profile" aria-selected="false">Add New Media</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Delete Media</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <br>
+                    <form id="userform"> 
+
+                        <div class="form-group col-md-4">
+                            <label>User ID</label>
+                            <input type="text" class="form-control" id="user-id">
+                        </div>
+                            <button class="btn btn-success text-uppercase" id="user-submit">Submit</button>
+                    </form>
+                </div>
+                
+                {{!-- New Media Tab --}}
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <br>
+                    <form id="mediaform" novalidate>
+                        {{!-- Media Select Form  --}}
+                        <div class="form-group col-md-4">
+                            <label>Media Type</label>
+                            <select class="form-control" id="media-type">
+                                <option>Book</option>
+                                <option>CD</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        {{!-- Industry ID form --}}
+                        <div class="form-group col-md-4">
+                            <label>Industry Identifier</label>
+                            <input type="text" class="form-control" id="industry-identifier" required></input>
+                            <div class="invalid-feedback">
+                                Please provide a valid Industry ID.
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Quantity</label>
+                            <input type="text" class="form-control" id="new-quantity" required></input>
+                            <div class="invalid-feedback">
+                                Please provide a valid number.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success text-uppercase" id="new-submit">Submit</button>
+                    </form>
+
+                </div>
+
+                {{!-- Delete Tab --}}
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <br>
+                    <form id="deleteform" novalidate>
+                        {{!-- Media Select Form  --}}
+                        <div class="form-group col-md-4">
+                            <label>Media Type</label>
+                            <select class="form-control" id="delete-media-type">
+                                <option>Book</option>
+                                <option>CD</option>
+                                <option>Whatever</option>
+                            </select>
+                        </div>
+                        {{!-- Industry ID form --}}
+                        <div class="form-group col-md-4">
+                            <label>Industry Identifier</label>
+                            <input type="text" class="form-control" id="delete-industry-identifier" required></input>
+                            <div class="invalid-feedback">
+                                Please provide a valid Industry ID.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-danger text-uppercase" id="delete-submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{{!-- Book successfully added to db modal: --}}
+<div class="modal fade" id="new-book-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                Media successfully added to database.
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success" data-dismiss="modal" id="modalclose">Okay</button>
+            </div>4
+        </div>
+    </div>
+</div>
+
+
