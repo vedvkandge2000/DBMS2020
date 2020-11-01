@@ -14,7 +14,7 @@ module.exports = app => {
 	});
 
 	//GET user info
-	//curl -i -H "Content-Type: application/json" http://localhost:3000/users/2
+	
 	app.get("/users/:userId", (req, res) => {
 		// this object is given to the front end
 		console.log("============USER ID===========");
@@ -131,13 +131,11 @@ module.exports = app => {
 	});
 
 	//DELETE a user
-	//Call global delete froute
-
+	
 	//UPDATE A USER's Information
 	//comes from req.body - this should be a form that changes user information
 	//PUT route for updating a user
-	//CURL command:
-	//curl -X PUT -H "Content-Type: application/json" -d '{"UserId": 1, "MediumId": 3}' http://localhost:3000/api/checkouthistory/checkin
+	
 	app.put("/api/users/update", (req, res) => {
 		//Logic to set update Query goes here - similar to media PUT route
 		var query = {};
@@ -161,8 +159,7 @@ module.exports = app => {
 	});
 
 	// POST route for adding a new user
-	// cURL command:
-	// curl -X POST -H "Content-Type: application/json" -d '{"firstName": "it", "lastName":"kazhmere", "userType":"Employee", "phoneNumber":"123-456-7890", "address":"i live here", "emailAddress":"i go here", "isEmployee":false}' http://localhost:3000/api/users/new
+	
 	app.post("/api/users/create", (req, res) => {
 		console.log(req.body);
 

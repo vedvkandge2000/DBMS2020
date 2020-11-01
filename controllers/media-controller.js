@@ -1,7 +1,7 @@
 var db = require("../models");
 var Sequelize = require("sequelize");
 var Op = Sequelize.Op;
-//axios - promise based ajax node module. on server side only
+
 var axios = require("axios");
 //require mediaUpdateExport
 var updateMediaTable = require("./updateMediaExport.js").updateMediaTable;
@@ -10,7 +10,7 @@ var deleteRowFromTable = require("./updateMediaExport.js").deleteRowFromTable;
 
 module.exports = app => {
 	// GET route for BOOK page
-	// curl -i -H "Content-Type: application/json" -X GET http://localhost:3000/media/book/9781781100523
+	
 	app.get("/media/:mediaType/:industryIdentifier", (req, response) => {
 		var query = {};
 		query.mediaType = req.params.mediaType;
@@ -29,7 +29,7 @@ module.exports = app => {
 	});
 
 	// GET route for SEARCH page
-	// curl -i -H "Content-Type: application/json" -X GET http://localhost:3000/search/title/harry%20potter
+	
 	app.get("/search/:searchBy/:searchQuery", (req, res) => {
 		searchBy = req.params.searchBy.toLowerCase();
 		searchQuery = "%" + req.params.searchQuery + "%";
@@ -99,7 +99,7 @@ module.exports = app => {
 	});
 
 	// POST route for adding a new BOOK to the database
-	// curl -H "Content-Type: application/json" -X POST -d '{"mediaType": "book", "industryIdentifier":"9780606323499"}' http://localhost:3000/api/media/new
+	
 	app.post("/api/media/new", (req, res) => {
 		var newMedium = {};
 		newMedium.mediaType = req.body.mediaType;
@@ -147,7 +147,7 @@ module.exports = app => {
 	//PUT to media table - add one item OR delete one item
 
 	//DELETE ALL INSTANCES OF A BOOK - REMOVING ROW FROM MEDIA TABLE
-	// curl -H "Content-Type: application/json" -X DELETE -d '{"mediaType":"book", "industryIdentifier":"9780439708180"}' http://localhost:3000/api/media/delete
+	
 	app.delete("/api/media/delete/:industryIdentifier", (req, res) => {
 		// if (req.body.mediaType === "book") {
 		Promise.resolve(() => {

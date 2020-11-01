@@ -6,7 +6,7 @@ module.exports = app => {
 	});
 
 	//GET user info
-	//curl -i -H "Content-Type: application/json" http://localhost:3000/users/2
+	
 	app.get("/manage/users/:userId", (req, res) => {
 		// this object is given to the front end
 		let dataDeliverable = {};
