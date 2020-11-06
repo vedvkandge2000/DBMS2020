@@ -19,3 +19,16 @@ This is a functional Library Management System which allows patrons to browse th
 
 * **Pranav Sadavarte** 
 * **Vedant Kandge**
+
+Features for Users
+1)Display- Books(All, Genre wise, Author wise), Authors, Borrowed books(using Student ID), Fines(of a particular student)
+2)Issue/Return/Report lost books
+3)Search for books using Genre, Author, Title
+4)Add enquiries/Comments
+
+Admin Features
+1)Register-Books, Students, Authors, Genres(Categories as well as adding genres to books), Personal info
+2)View-Users, Personal info, Books borrowed 
+3)Delete-Books, Authors, Genres
+4)Update/Modify-Books(Restocking, changing info), Authors, Students
+5)Manage fines, enquiries and comments(Use to pay and acknowledge fines and enquiries)
